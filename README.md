@@ -1,9 +1,8 @@
 # Simulating spin-1/2 chains on current quantum computers
 This program simulates the behaviour of a chain of spin-1/2 particles over time on real and simulated quantum computers. The implementation follows the methods suggested by [1] Smith, A., Kim, M.S., Pollmann, F. et al. in [Simulating quantum many-body dynamics on a current digital quantum computer](https://doi.org/10.1038/s41534-019-0217-0). npj Quantum Inf 5, 106 (2019).
 
-## Requirements
-- Jupyter notebook
-- [Quiskit](https://qiskit.org/)
+## Prerequisites
+In order to run this program, [Quiskit](https://qiskit.org/) must be installed
 
 ## Usage
 Run all cells in the jupyter notebook in order to start the GUI

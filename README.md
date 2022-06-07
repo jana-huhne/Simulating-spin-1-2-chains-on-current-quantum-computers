@@ -1,92 +1,47 @@
-# Simulating spin-1-2 chains on current quantum computers
+# Simulating spin-1/2 chains on current quantum computers
+This program simulates the behaviour of a chain of spin-1/2 particles over time on real and simulated quantum computers. The implementation follows the methods suggested by [1] Smith, A., Kim, M.S., Pollmann, F. et al. in [Simulating quantum many-body dynamics on a current digital quantum computer](https://doi.org/10.1038/s41534-019-0217-0). npj Quantum Inf 5, 106 (2019).
 
-
-
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.lrz.de/00000000014AA190/simulating-spin-1-2-chains-on-current-quantum-computers.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.lrz.de/00000000014AA190/simulating-spin-1-2-chains-on-current-quantum-computers/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## Requirements
+- Jupyter notebook
+- Quiskit
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Run all cells in the jupyter notebook in order to start the GUI
+You can use it to configure your own simulations, run them on real and simulated quantum computers and plot the results.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+First, enter your IBM account token if you wish to run simulations on real hardware, click on "activate" and wait until "success" is displayed next to the button. This step isn't required.
+Enter your desired physical and simulation parameters in the sections "Physical Properties" and "Simulation". Give your simulation a name in the "name" field and click "run" in order to run the simulation. Depending on the input, this may take a while. After the simulation has finished, its name should appear in the box under "select results to plot")
+In order to plot the results, select the observable fo which the values will be calculated and plotted and, if required, the qubit indices for which to perform the calculation. Choose one of the two display methods. Finally, select the results you wish to plot and click on "show" to open a plot window. You can select multiple results at once, if the display method is "graph", all selected results will be put together into one figure.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+Explanations of the input fields:
+##### IBM token:
+If you have an IBM account, you can copy your user token here (Find it under Account settings -> Account overview -> API token). You can also create an account [here](https://quantum-computing.ibm.com/) for free. This will give the program access to real IBM quantum computers, they will appear in the list of simulators. Note that the simulator menu will take some time to load after an IBM account was activated each time it is clicked because it has to get the available hardware options online.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+##### Physical properties
+specify the parameters of the hamiltonian $$\hat{H}=-J \sum_{j=1}^{N-1}\left(\hat{\sigma}_{j}^{x} \hat{\sigma}_{j+1}^{x}+\hat{\sigma}_{j}^{y} \hat{\sigma}_{j+1}^{y}\right)+U \sum_{j=1}^{N-1} \hat{\sigma}_{j}^{z} \hat{\sigma}_{j+1}^{z}+\sum_{j=1}^{N} h_{j} \hat{\sigma}_{j}^{z}$$, which describes the simulated physical system
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+- ` number of qubits`: number of particles to simulate
+- `J,U`: Strength of nearest-neighbor interactions
+- `h`: potential acting on the spin-1/2 chain. If `slope` is 0, the value is sampled randomly for each grid point from the interval [-h, h]. If `slope` is not zero, the potential starts at value h at the first qubit and increases linearly with the specified slope 
+- `initial state`: the state the simulation starts with. Either "domain wall": |...🠗🠗🠗🠕🠕🠕...> or "neel": |...🠕🠗🠕🠗🠕...>
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+##### Simulation
+- `time`: total time span that will be simulated
+- `data points`: number of datapoints within the specified timespan
+- `symmetric trotter decomposition`: if selected, a symmetric trotter decomposition of order 3 is performed instead of a regular trotter decomposition of order 2
+- `error mitigation`: if selected, physically impossible states are discarded in the result (states where the conservation of total spin is violated) 
+- `simulator`:  backend used to perform the simulation
+	- numerical exact: reference solution using the time propagator of the system
+	- numerical trotter: reference solution using the trotterized time propagator of the system
+	- numerical reduced trotter: reference solution using the trotterized time propagator of the system with fewer trotter steps and intermediate datapoints in order to achieve shallower circuits ("reduced trotter decomposition")
+	- statevector simulator: run the simulation on quiskit's statevector simulator with regular trotter decomposition
+	- error free: run the simulation on a simulated quantum computer without hardware error and reduced trotter decomposition
+	- fake_*name*: run the simulation on a simulated quantum computer mimicking the error of the real IBM quantum computer with the same name (using the reduced trotter decomposition)
+	- ibmq_*name*: run the simulation on a real quantum computer (only if an IBM API token was activated) using the reduced trotter decomposition. note: simulations on real hardware will take significantly longer than local simulations. Status updates can be found at the bottom of the jupyter notebook, directly under the "GUI" cell.
+- `name`: the name of the simulation to be run. It will be displayed in the plot legend or title and can be used to select the simulations to plot.
 
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+##### Data Processing
+- `observable`: the observable used to calculate the data which is later plotted
+- `qubit 1`, `qubit 2`: specify the indices of the particles/qubits that should be used in the calculation if required
+- `display method`: display the data either as regular graph or as heatmap

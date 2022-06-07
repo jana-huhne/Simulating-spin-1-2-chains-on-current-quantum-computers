@@ -3,7 +3,7 @@ This program simulates the behaviour of a chain of spin-1/2 particles over time 
 
 ## Requirements
 - Jupyter notebook
-- Quiskit
+- [Quiskit](https://qiskit.org/)
 
 ## Usage
 Run all cells in the jupyter notebook in order to start the GUI

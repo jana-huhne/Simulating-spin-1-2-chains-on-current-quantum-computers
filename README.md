@@ -45,6 +45,6 @@ specify the parameters of the hamiltonian $$\hat{H}=-J \sum_{j=1}^{N-1}\left(\ha
   - Z-Spin: Spin in z-direction
   - Domain Wall (for the domain wall initial state): Measure for how much the initial state is disturbed, so how many spins in the first half of the chain are flipped
   - Equal-time Correlator: Measure for how much the spins of two particles are correlated
-  - Quantum: Quantum Fisher Information (measure for the entanglement of the whole system)
+  - QFI: Quantum Fisher Information (measure for the entanglement of the whole system)
 - `qubit 1`, `qubit 2`: specify the indices of the particles/qubits that should be used in the calculation if required
 - `display method`: display the data either as regular graph or as heatmap

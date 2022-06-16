@@ -27,7 +27,7 @@ specify the parameters of the hamiltonian $$\hat{H}=-J \sum_{j=1}^{N-1}\left(\ha
 
 ##### Simulation
 - `time`: total time span that will be simulated
-- `data points`: number of datapoints within the specified timespan
+- `data points`: number of datapoints within the specified timespan (should be multiple of 4)
 - `symmetric trotter decomposition`: if selected, a symmetric trotter decomposition of order 3 is performed instead of a regular trotter decomposition of order 2
 - `error mitigation`: if selected, physically impossible states are discarded in the result (states where the conservation of total spin is violated) 
 - `simulator`:  backend used to perform the simulation
